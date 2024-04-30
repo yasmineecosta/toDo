@@ -19,7 +19,7 @@ middleware = [
 app = FastAPI(middleware=middleware)
 
 class Task(BaseModel):
-	id: Optional[str]
+	id: Optional[str] = None
 	name: str
 	isDone: bool = False
 
@@ -29,7 +29,7 @@ banco: List[Task] = []
 # GETS
 @app.get("/")
 def check():
-    return {'mensagem': 'Olá, seja bem-vindo ao FastAPI'}
+    return {'mensagem': 'Olá, seja bem-vindo ao To-Do List!'}
 
 
 # Adicionando uma nova tarefa
